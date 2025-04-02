@@ -1,4 +1,4 @@
-# Serverless File Sharing Platform
+# Serverless File Sharing Platform on AWS
 
 **Overview:**
 
