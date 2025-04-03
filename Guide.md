@@ -286,9 +286,9 @@ At this point, your Lambda functions and API Gateway configuration should be liv
 2. Run the following command (replace `<api-id>` and `<region>` with values from your Invoke URL, e.g., `abc123.execute-api.us-east-1.amazonaws.com`):
 
 ```bash
-curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=example.pdf' \
---header 'Content-Type: application/octet-stream' \
---data-binary '@/path/to/your/example.pdf'
+curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=<filename>" ` 
+--header "Content-Type: application/octet-stream" ` 
+--data-binary "@<path-to-local-file>"
 ```
 
 - **Explanation:**  
@@ -300,13 +300,13 @@ curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?f
 1. In your terminal, run the following command:
 
 ```bash
-curl --location 'https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=example.pdf' --output downloaded_example.pdf
+curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=<filename>" -o "<path-to-save-local-file>"
 ```
 
 - **Explanation:**  
   - This command sends a GET request to the API.
   - The file is returned as a base64-encoded response by the Lambda, which API Gateway decodes based on your settings.
-  - The `--output` flag saves the file locally as `downloaded_example.pdf`.
+  - The `--o` flag saves the file locally as `<path-to-save-local-file>`. 
 
 ---
 
