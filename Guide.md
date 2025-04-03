@@ -38,15 +38,15 @@ The project consists of the following components:
 **Architecture Diagram:**
 
 ```
-     [User / HTTP Client]
-             |
-         API Gateway  <------ (Configured with Binary Support)
+       [User / HTTP Client]
+               |
+          API Gateway  <------ (Configured with Binary Support)
          /           \
         /             \
 [Upload Lambda]   [Download Lambda]
         \             /
          \           /
-           Amazon S3 Bucket
+       Amazon S3 Bucket
 ```
 
 ---
