@@ -295,6 +295,14 @@ curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/fil
   - `--data-binary` sends the file in its original binary form.  
   - The `fileName` query parameter tells the Lambda function what to name the file in S3.
 
+- **Example Sample- Uploading from User 1**
+
+```bash
+curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=uploadDownload.txt" `
+--header "Content-Type: text/plain" `
+--data-binary "@C:\Users\Chintan\Desktop\uploadDownload.txt"
+```
+
 #### B. Downloading a File
 
 1. In your terminal, run the following command:
@@ -306,7 +314,13 @@ curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/fil
 - **Explanation:**  
   - This command sends a GET request to the API.
   - The file is returned as a base64-encoded response by the Lambda, which API Gateway decodes based on your settings.
-  - The `--o` flag saves the file locally as `<path-to-save-local-file>`. 
+  - The `--o` flag saves the file locally as `<path-to-save-local-file>`.
+
+- **Example Sample- Downloading on User 1**
+
+```bash
+curl.exe --location "https://<api-id>.execute-api.<region>.amazonaws.com/dev/files?fileName=uploadDownload.txt" -o "C:\Users\Chintan\Desktop\downloaded_uploadDownload.txt"
+```
 
 ---
 
